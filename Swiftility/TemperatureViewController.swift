@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class TemperatureViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
