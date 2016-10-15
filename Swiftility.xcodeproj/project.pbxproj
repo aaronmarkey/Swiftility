@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		938FA3FE1DB29A280080F221 /* advanced_dot_digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 938FA3FD1DB29A280080F221 /* advanced_dot_digital-7.ttf */; };
 		93A0D7541DAF165D00169D62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A0D7531DAF165D00169D62 /* AppDelegate.swift */; };
 		93A0D7561DAF165D00169D62 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A0D7551DAF165D00169D62 /* TimerViewController.swift */; };
 		93A0D7581DAF165D00169D62 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A0D7571DAF165D00169D62 /* TemperatureViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		938FA3FD1DB29A280080F221 /* advanced_dot_digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "advanced_dot_digital-7.ttf"; sourceTree = "<group>"; };
 		93A0D7501DAF165D00169D62 /* Swiftility.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftility.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A0D7531DAF165D00169D62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93A0D7551DAF165D00169D62 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -39,9 +41,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		938FA3FA1DB2996E0080F221 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				938FA3FD1DB29A280080F221 /* advanced_dot_digital-7.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		93A0D7471DAF165D00169D62 = {
 			isa = PBXGroup;
 			children = (
+				938FA3FA1DB2996E0080F221 /* Resources */,
 				93A0D7521DAF165D00169D62 /* Swiftility */,
 				93A0D7511DAF165D00169D62 /* Products */,
 			);
@@ -132,6 +143,7 @@
 				93A0D7601DAF165D00169D62 /* LaunchScreen.storyboard in Resources */,
 				93A0D75D1DAF165D00169D62 /* Assets.xcassets in Resources */,
 				93A0D75B1DAF165D00169D62 /* Main.storyboard in Resources */,
+				938FA3FE1DB29A280080F221 /* advanced_dot_digital-7.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +309,7 @@
 				93A0D7661DAF165D00169D62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

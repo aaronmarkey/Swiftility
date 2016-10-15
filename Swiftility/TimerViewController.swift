@@ -20,7 +20,7 @@ class FirstViewController: UIViewController {
     
 
     //MARK: Outlets
-    @IBOutlet weak var playPauseButtonOutlet: UIButton!
+    @IBOutlet weak var playPauseButtonOutlet: UIBarButtonItem!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var datePickerOutlet: UIDatePicker!
     
@@ -30,46 +30,49 @@ class FirstViewController: UIViewController {
         clockTime = sender.countDownDuration
     }
     
-    @IBAction func playPauseAction(sender: UIButton) {
-        if(playPauseButtonOutlet.currentImage == UIImage(imageLiteral: "play")) {
-            playPauseButtonOutlet.setImage(UIImage(imageLiteral: "pause"), forState: .Normal)
+    @IBAction func playPauseAction(sender: UIBarButtonItem) {
+        if(playPauseButtonOutlet.image == UIImage(imageLiteral: "play")) {
+            playPauseButtonOutlet.image = UIImage(imageLiteral: "pause")
             
             timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:
                 #selector(decrementClock), userInfo: nil, repeats: true)
-            datePickerOutlet.userInteractionEnabled = false
-            datePickerOutlet.alpha = 0.25
+            toggleDatePicker(false)
         } else {
-            playPauseButtonOutlet.setImage(UIImage(imageLiteral: "play"), forState: .Normal)
+            playPauseButtonOutlet.image = UIImage(imageLiteral: "play")
             timer.invalidate()
             pauseTime = clockTime
-            datePickerOutlet.userInteractionEnabled = true
-            datePickerOutlet.alpha = 1.0
+            toggleDatePicker(true)
         }
+
     }
     
-    @IBAction func resetAction(sender: UIButton) {
+    @IBAction func resetAction(sender: UIBarButtonItem) {
         timer.invalidate()
         clockTime = datePickerOutlet.countDownDuration
-        playPauseButtonOutlet.setImage(UIImage(imageLiteral: "play"), forState: .Normal)
+        playPauseButtonOutlet.image = UIImage(imageLiteral: "play")
+        toggleDatePicker(true)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         clockTime = datePickerOutlet.countDownDuration
-
+        timeLabel.font = UIFont(name: "AdvancedDotDigital-7", size: 30)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    
+    //MARK: Utility Functions
     func decrementClock() {
         clockTime -= 1
         if(clockTime == 0) {
             timer.invalidate()
+            playPauseButtonOutlet.image = UIImage(imageLiteral: "play")
+            toggleDatePicker(true)
         }
     }
 
@@ -78,7 +81,22 @@ class FirstViewController: UIViewController {
         let seconds = interval % 60
         let minutes = (interval / 60) % 60
         let hours = (interval / 3600)
+        
+        if(hours == 0) {
+            return String(format: "%02d:%02d", minutes, seconds)
+        }
+        
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    func toggleDatePicker(enabled: Bool) {
+        datePickerOutlet.userInteractionEnabled = enabled
+        
+        if(enabled) {
+            datePickerOutlet.alpha = 1.0
+        } else {
+            datePickerOutlet.alpha = 0.25
+        }
     }
 
 }

@@ -39,42 +39,45 @@
                                     <navigationItem title="Timer" id="coJ-fK-gjM"/>
                                 </items>
                             </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIu-so-wn4">
+                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem image="play" id="pPl-nc-Vj5">
+                                        <connections>
+                                            <action selector="playPauseAction:" destination="9pv-A4-QxB" id="Rym-LT-VJf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hjg-oE-7Nq"/>
+                                    <barButtonItem title="Reset" id="ogM-M5-zYx">
+                                        <connections>
+                                            <action selector="resetAction:" destination="9pv-A4-QxB" id="lu0-uG-dlt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-IF-OsF">
-                                <rect key="frame" x="20" y="105" width="560" height="30"/>
+                                <rect key="frame" x="20" y="96" width="560" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="jrS-5Z-ver"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAU-K4-Nec">
-                                <rect key="frame" x="288" y="424" width="25" height="25"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="play"/>
-                                <connections>
-                                    <action selector="playPauseAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7hr-WC-AdV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bj-ik-cbI">
-                                <rect key="frame" x="281" y="457" width="39" height="30"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="resetAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="iXH-Ju-0vZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7bj-ik-cbI" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="3Kb-uW-1jH"/>
-                            <constraint firstItem="7bj-ik-cbI" firstAttribute="top" secondItem="GAU-K4-Nec" secondAttribute="bottom" constant="8" id="AN4-vk-f8h"/>
                             <constraint firstItem="1ym-ca-sXr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="DXg-U3-ckV"/>
                             <constraint firstItem="1w1-IF-OsF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="FMY-YD-3Ku"/>
-                            <constraint firstItem="1w1-IF-OsF" firstAttribute="top" secondItem="j8Q-y1-DxC" secondAttribute="bottom" constant="41" id="G4B-op-eUi"/>
-                            <constraint firstItem="GAU-K4-Nec" firstAttribute="top" secondItem="1ym-ca-sXr" secondAttribute="bottom" constant="16" id="Qch-gv-sRF"/>
+                            <constraint firstItem="1w1-IF-OsF" firstAttribute="top" secondItem="j8Q-y1-DxC" secondAttribute="bottom" constant="32" id="G4B-op-eUi"/>
                             <constraint firstItem="j8Q-y1-DxC" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="TQG-7k-rxN"/>
                             <constraint firstItem="j8Q-y1-DxC" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="YUi-U9-w5G"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="tIu-so-wn4" secondAttribute="bottom" id="abw-lp-5z3"/>
                             <constraint firstItem="1ym-ca-sXr" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="f1k-ay-wfG"/>
+                            <constraint firstItem="tIu-so-wn4" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="fol-JI-IYZ"/>
                             <constraint firstItem="j8Q-y1-DxC" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="-20" id="gQF-5b-9ki"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j8Q-y1-DxC" secondAttribute="trailing" constant="-20" id="glG-24-avo"/>
-                            <constraint firstItem="GAU-K4-Nec" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="s45-eP-hs9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tIu-so-wn4" secondAttribute="trailing" constant="-20" id="mbR-2I-Uvb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1w1-IF-OsF" secondAttribute="trailing" id="twH-wm-p1s"/>
                         </constraints>
                         <variation key="default">
@@ -86,7 +89,7 @@
                     <tabBarItem key="tabBarItem" title="Timer" image="clock" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="datePickerOutlet" destination="1ym-ca-sXr" id="hhD-qD-7sj"/>
-                        <outlet property="playPauseButtonOutlet" destination="GAU-K4-Nec" id="X9y-r9-6sQ"/>
+                        <outlet property="playPauseButtonOutlet" destination="pPl-nc-Vj5" id="GQS-nt-d3a"/>
                         <outlet property="timeLabel" destination="1w1-IF-OsF" id="gtw-mi-3Ei"/>
                     </connections>
                 </viewController>
@@ -97,7 +100,7 @@
         <!--Temperature-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Swiftility" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="TemperatureViewController" customModule="Swiftility" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -106,35 +109,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="209.5" height="41.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="215.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Np-vF-VQD">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Np-vF-VQD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Mdo-pj-j8Y"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Temperature" id="qyK-6S-sGO"/>
                                 </items>
                             </navigationBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0vd-FE-zic">
+                                <rect key="frame" x="237" y="96" width="127" height="29"/>
+                                <segments>
+                                    <segment title="°F → °C"/>
+                                    <segment title="°C → °F"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchAction:" destination="8rJ-Kc-sve" eventType="valueChanged" id="fMj-dj-Wus"/>
+                                </connections>
+                            </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rej-fQ-7p5">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRu-Rw-bIm">
+                                <rect key="frame" x="20" y="452" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="0vd-FE-zic" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="3EY-44-yrX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eRu-Rw-bIm" secondAttribute="trailing" id="B12-ld-Z6z"/>
+                            <constraint firstItem="Rej-fQ-7p5" firstAttribute="top" secondItem="0vd-FE-zic" secondAttribute="bottom" constant="30" id="Jla-aK-y4g"/>
+                            <constraint firstItem="1Np-vF-VQD" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="Kvr-sY-OfU"/>
+                            <constraint firstItem="eRu-Rw-bIm" firstAttribute="top" secondItem="Rej-fQ-7p5" secondAttribute="bottom" constant="44" id="N2q-ZG-SOF"/>
+                            <constraint firstItem="1Np-vF-VQD" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="VvD-VH-7Z0"/>
+                            <constraint firstItem="1Np-vF-VQD" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="buw-ah-drC"/>
+                            <constraint firstItem="Rej-fQ-7p5" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="cZ8-er-VgQ"/>
+                            <constraint firstItem="eRu-Rw-bIm" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="eJh-R6-ISy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Np-vF-VQD" secondAttribute="trailing" constant="-20" id="eQv-cP-yC7"/>
+                            <constraint firstItem="Rej-fQ-7p5" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="ele-zS-0wg"/>
+                            <constraint firstItem="0vd-FE-zic" firstAttribute="top" secondItem="1Np-vF-VQD" secondAttribute="bottom" constant="32" id="kcE-UL-Ilw"/>
+                            <constraint firstItem="eRu-Rw-bIm" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="lOt-YK-6BF"/>
+                            <constraint firstItem="Rej-fQ-7p5" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="mLY-EA-sEK"/>
+                            <constraint firstItem="0vd-FE-zic" firstAttribute="top" secondItem="1Np-vF-VQD" secondAttribute="bottom" symbolic="YES" id="uLW-fr-TGS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="buw-ah-drC"/>
+                                <exclude reference="Jla-aK-y4g"/>
+                                <exclude reference="cZ8-er-VgQ"/>
+                                <exclude reference="uLW-fr-TGS"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Temperature" image="temp" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="convertedTempLabel" destination="eRu-Rw-bIm" id="Fmh-hI-JlA"/>
+                        <outlet property="switchOutlet" destination="0vd-FE-zic" id="cKp-XX-8g7"/>
+                        <outlet property="tempPickerOutlet" destination="Rej-fQ-7p5" id="EPh-Q6-qYt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,7 +188,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clP-Ph-tz2">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clP-Ph-tz2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="Dates" id="Jua-Tt-GWx"/>
@@ -160,6 +196,11 @@
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="clP-Ph-tz2" secondAttribute="trailing" constant="-20" id="74o-Cw-NO7"/>
+                            <constraint firstItem="clP-Ph-tz2" firstAttribute="top" secondItem="jrU-cP-1Vr" secondAttribute="topMargin" id="DwS-HH-B3b"/>
+                            <constraint firstItem="clP-Ph-tz2" firstAttribute="leading" secondItem="jrU-cP-1Vr" secondAttribute="leadingMargin" constant="-20" id="rf3-s6-xGr"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dates" image="calendar" id="E6Y-aM-3sV"/>
                 </viewController>
