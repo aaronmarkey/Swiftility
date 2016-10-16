@@ -16,6 +16,9 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     var fString: Array<String> = []
     var cString: Array<String> = []
+    
+    var holdF: Int = 32
+    var holdC: Int = 0
 
     //MARK: Outlets
     @IBOutlet weak var tempPickerOutlet: UIPickerView!
@@ -25,7 +28,13 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     //MARK: Actions
     @IBAction func switchAction(sender: UISegmentedControl) {
-        tempPickerOutlet.reloadAllComponents()
+        if(sender.selectedSegmentIndex == 0) {
+            tempPickerOutlet.selectRow(holdF, inComponent: 0, animated: false)
+            convertToC(fDegrees[holdF])
+        } else {
+            tempPickerOutlet.selectRow(holdC, inComponent: 0, animated: false)
+            convertToF(cDegrees[holdC])
+        }
     }
     
     
@@ -37,6 +46,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         fString = setPickerItems(fDegrees, type: "F")
         cString = setPickerItems(cDegrees, type: "C")
         
+        convertToC(fDegrees[0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +79,11 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(switchOutlet.selectedSegmentIndex == 0) {
+            holdF = row
+            convertToC(fDegrees[row])
         } else {
+            holdC = row
+            convertToF(cDegrees[row])
         }
     }
 
@@ -82,6 +96,16 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
         
         return stringOfValues
+    }
+    
+    func convertToC(degree: Int) {
+        let c = Double((degree - 32)) * (5/9)
+        convertedTempLabel.text = String(format: "%0.2f \u{00B0}C", c)
+    }
+    
+    func convertToF(degree: Int) {
+        let f = (Double(degree) * 9/5) + 32.0
+        convertedTempLabel.text = String(format: "%0.2f \u{00B0}F", f)
     }
 
 }

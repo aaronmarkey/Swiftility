@@ -128,15 +128,15 @@
                                     <action selector="switchAction:" destination="8rJ-Kc-sve" eventType="valueChanged" id="fMj-dj-Wus"/>
                                 </connections>
                             </segmentedControl>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rej-fQ-7p5">
-                                <rect key="frame" x="140" y="192" width="320" height="216"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRu-Rw-bIm">
-                                <rect key="frame" x="20" y="452" width="560" height="21"/>
+                                <rect key="frame" x="20" y="163" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rej-fQ-7p5">
+                                <rect key="frame" x="140" y="335" width="320" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -144,13 +144,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="eRu-Rw-bIm" secondAttribute="trailing" id="B12-ld-Z6z"/>
                             <constraint firstItem="Rej-fQ-7p5" firstAttribute="top" secondItem="0vd-FE-zic" secondAttribute="bottom" constant="30" id="Jla-aK-y4g"/>
                             <constraint firstItem="1Np-vF-VQD" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="Kvr-sY-OfU"/>
-                            <constraint firstItem="eRu-Rw-bIm" firstAttribute="top" secondItem="Rej-fQ-7p5" secondAttribute="bottom" constant="44" id="N2q-ZG-SOF"/>
+                            <constraint firstItem="eRu-Rw-bIm" firstAttribute="top" secondItem="Rej-fQ-7p5" secondAttribute="bottom" constant="-388" id="N2q-ZG-SOF"/>
                             <constraint firstItem="1Np-vF-VQD" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-20" id="VvD-VH-7Z0"/>
                             <constraint firstItem="1Np-vF-VQD" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="buw-ah-drC"/>
                             <constraint firstItem="Rej-fQ-7p5" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="cZ8-er-VgQ"/>
                             <constraint firstItem="eRu-Rw-bIm" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="eJh-R6-ISy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Np-vF-VQD" secondAttribute="trailing" constant="-20" id="eQv-cP-yC7"/>
-                            <constraint firstItem="Rej-fQ-7p5" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="ele-zS-0wg"/>
+                            <constraint firstItem="Rej-fQ-7p5" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="143" id="ele-zS-0wg"/>
                             <constraint firstItem="0vd-FE-zic" firstAttribute="top" secondItem="1Np-vF-VQD" secondAttribute="bottom" constant="32" id="kcE-UL-Ilw"/>
                             <constraint firstItem="eRu-Rw-bIm" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="lOt-YK-6BF"/>
                             <constraint firstItem="Rej-fQ-7p5" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="mLY-EA-sEK"/>
