@@ -17,7 +17,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     var fString: Array<String> = []
     var cString: Array<String> = []
     
-    var holdF: Int = 32
+    var holdF: Int = 0
     var holdC: Int = 0
 
     //MARK: Outlets
@@ -31,9 +31,11 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         if(sender.selectedSegmentIndex == 0) {
             tempPickerOutlet.selectRow(holdF, inComponent: 0, animated: false)
             convertToC(fDegrees[holdF])
+            tempPickerOutlet.reloadAllComponents()
         } else {
             tempPickerOutlet.selectRow(holdC, inComponent: 0, animated: false)
             convertToF(cDegrees[holdC])
+            tempPickerOutlet.reloadAllComponents()
         }
     }
     
@@ -46,7 +48,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         fString = setPickerItems(fDegrees, type: "F")
         cString = setPickerItems(cDegrees, type: "C")
         
-        convertToC(holdF)
+        convertToC(fDegrees[holdF])
     }
 
     override func didReceiveMemoryWarning() {
