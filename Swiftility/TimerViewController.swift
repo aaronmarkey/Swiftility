@@ -64,6 +64,10 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .All
+    }
+    
     
     
     //MARK: Utility Functions

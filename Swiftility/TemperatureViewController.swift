@@ -46,7 +46,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         fString = setPickerItems(fDegrees, type: "F")
         cString = setPickerItems(cDegrees, type: "C")
         
-        convertToC(fDegrees[0])
+        convertToC(holdF)
     }
 
     override func didReceiveMemoryWarning() {

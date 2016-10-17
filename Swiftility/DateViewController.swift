@@ -9,27 +9,41 @@
 import UIKit
 
 class DateViewController: UIViewController {
-
+    
+    //MARK: Outlets
+    @IBOutlet weak var startDateOutlet: UIDatePicker!
+    @IBOutlet weak var endDateOutlet: UIDatePicker!
+    @IBOutlet weak var intervalLabel: UILabel!
+    
+    
+    //MARK: Actions
+    @IBAction func startDateAction(sender: UIDatePicker) {
+        endDateOutlet.minimumDate = sender.date
+    }
+    
+    @IBAction func endDateAction(sender: UIDatePicker) {
+        startDateOutlet.maximumDate = sender.date
+    }
+    
+    @IBAction func calculateButton(sender: UIButton) {
+        let interval = endDateOutlet.date.timeIntervalSinceDate(startDateOutlet.date)
+        
+        let timeInDays = Double(interval)/86400
+        let rounded = Int(round(timeInDays))
+        
+        let tag = rounded == 1 ? "Day" : "Days"
+        
+        intervalLabel.text = "\(rounded) \(tag)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        intervalLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
