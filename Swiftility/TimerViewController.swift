@@ -56,6 +56,14 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let dateComp : NSDateComponents = NSDateComponents()
+        dateComp.hour = 0
+        dateComp.minute = 1
+        let calendar : NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let date : NSDate = calendar.dateFromComponents(dateComp)!
+        datePickerOutlet.setDate(date, animated: true)
+        
         clockTime = datePickerOutlet.countDownDuration
         timeLabel.font = UIFont(name: "AdvancedDotDigital-7", size: 30)
     }

@@ -33,8 +33,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="yHc-CS-rbV"/>
                                 </constraints>
+                                <color key="barTintColor" red="1" green="0.63921568627450975" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Timer" id="coJ-fK-gjM"/>
@@ -55,6 +56,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-IF-OsF">
                                 <rect key="frame" x="20" y="96" width="560" height="64"/>
@@ -67,6 +69,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1ym-ca-sXr" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="DXg-U3-ckV"/>
                             <constraint firstItem="1w1-IF-OsF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="FMY-YD-3Ku"/>
@@ -115,8 +118,12 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Mdo-pj-j8Y"/>
                                 </constraints>
+                                <color key="barTintColor" red="1" green="0.63921568627450975" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Temperature" id="qyK-6S-sGO"/>
+                                    <navigationItem title="Temperature Conversion" id="qyK-6S-sGO"/>
                                 </items>
                             </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0vd-FE-zic">
@@ -125,13 +132,14 @@
                                     <segment title="°F → °C"/>
                                     <segment title="°C → °F"/>
                                 </segments>
+                                <color key="tintColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="switchAction:" destination="8rJ-Kc-sve" eventType="valueChanged" id="fMj-dj-Wus"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRu-Rw-bIm">
-                                <rect key="frame" x="20" y="163" width="560" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="163" width="560" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -140,6 +148,7 @@
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="0vd-FE-zic" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="3EY-44-yrX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eRu-Rw-bIm" secondAttribute="trailing" id="B12-ld-Z6z"/>
@@ -197,13 +206,19 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="nI4-p0-exB"/>
                                 </constraints>
+                                <color key="barTintColor" red="1" green="0.63921568627450975" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Dates" id="Jua-Tt-GWx"/>
+                                    <navigationItem title="Date Inverval" id="Jua-Tt-GWx"/>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEd-WS-Xqq">
                                 <rect key="frame" x="20" y="511" width="64" height="30"/>
-                                <state key="normal" title="Calculate"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="calculateButton:" destination="8st-YC-wWE" eventType="touchUpInside" id="I5X-ND-PBa"/>
                                 </connections>
@@ -211,7 +226,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCq-JJ-6nE">
                                 <rect key="frame" x="20.5" y="84" width="87" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ggp-OO-M9P">
@@ -247,11 +262,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFO-rF-uws">
                                 <rect key="frame" x="20" y="249" width="75.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.63921568630000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gnS-NE-oLl" firstAttribute="width" secondItem="jrU-cP-1Vr" secondAttribute="width" multiplier="0.5" id="4Zb-eK-Idy"/>
                             <constraint firstItem="ggp-OO-M9P" firstAttribute="centerX" secondItem="jrU-cP-1Vr" secondAttribute="centerX" id="50x-Ly-RAz"/>
