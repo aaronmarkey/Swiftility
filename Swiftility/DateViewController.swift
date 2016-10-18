@@ -26,8 +26,11 @@ class DateViewController: UIViewController {
     }
     
     @IBAction func calculateButton(sender: UIButton) {
+        
+        //calculate time between the two dates
         let interval = endDateOutlet.date.timeIntervalSinceDate(startDateOutlet.date)
         
+        //convert to days
         let timeInDays = Double(interval)/86400
         let rounded = Int(round(timeInDays))
         
@@ -43,6 +46,10 @@ class DateViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .All
     }
     
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Swiftility/TimerViewController.swift"
-            timestampString = "498440374.240998"
+            timestampString = "498455266.902396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "decrementClock()"
             landmarkType = "5">
          </BreakpointContent>

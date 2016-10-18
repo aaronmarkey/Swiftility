@@ -28,6 +28,8 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     //MARK: Actions
     @IBAction func switchAction(sender: UISegmentedControl) {
+        
+        //reload UI when segment changes
         if(sender.selectedSegmentIndex == 0) {
             tempPickerOutlet.selectRow(holdF, inComponent: 0, animated: false)
             convertToC(fDegrees[holdF])
@@ -42,17 +44,25 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set picker data source and delegate
         tempPickerOutlet.dataSource = self
         tempPickerOutlet.delegate = self
         
+        //generate array of strings of degrees
         fString = setPickerItems(fDegrees, type: "F")
         cString = setPickerItems(cDegrees, type: "C")
         
+        //convert initial C on screen
         convertToC(fDegrees[holdF])
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .All
     }
     
     
@@ -91,6 +101,15 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     
     //MARK: Functions
+    
+    /**
+     Formats an array of ints into a string in the format "int degree".
+     
+     - Parameter values: Array of all Int values for the degrees avail.
+     - Parameter style: The type degree. F or c.
+     
+     - Returns: The array of formatted strings.
+     */
     func setPickerItems(values: Array<Int>, type: String) -> Array<String> {
         var stringOfValues: Array<String> = []
         for i in values {
@@ -100,11 +119,22 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         return stringOfValues
     }
     
+    
+    /**
+     Converts F to C
+     
+     - Parameter degree: The number to be converted.
+    */
     func convertToC(degree: Int) {
         let c = Double((degree - 32)) * (5/9)
         convertedTempLabel.text = String(format: "%0.2f \u{00B0}C", c)
     }
     
+    /**
+     Converts C to F
+     
+     - Parameter degree: The number to be converted.
+     */
     func convertToF(degree: Int) {
         let f = (Double(degree) * 9/5) + 32.0
         convertedTempLabel.text = String(format: "%0.2f \u{00B0}F", f)

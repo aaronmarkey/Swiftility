@@ -31,12 +31,16 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func playPauseAction(sender: UIBarButtonItem) {
+        
+        //if button is play when pressed, start timer
         if(playPauseButtonOutlet.image == UIImage(imageLiteral: "play")) {
             playPauseButtonOutlet.image = UIImage(imageLiteral: "pause")
             
             timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:
                 #selector(decrementClock), userInfo: nil, repeats: true)
             toggleDatePicker(false)
+            
+        //else end timer
         } else {
             playPauseButtonOutlet.image = UIImage(imageLiteral: "play")
             timer.invalidate()
@@ -46,6 +50,7 @@ class FirstViewController: UIViewController {
 
     }
     
+    //reset the timer to the value of the picker
     @IBAction func resetAction(sender: UIBarButtonItem) {
         timer.invalidate()
         clockTime = datePickerOutlet.countDownDuration
@@ -57,6 +62,8 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set an initial value to the date picker. Work around for a bug in the 
+        //date picker class.
         let dateComp : NSDateComponents = NSDateComponents()
         dateComp.hour = 0
         dateComp.minute = 1
@@ -65,6 +72,8 @@ class FirstViewController: UIViewController {
         datePickerOutlet.setDate(date, animated: true)
         
         clockTime = datePickerOutlet.countDownDuration
+        
+        //set custom font
         timeLabel.font = UIFont(name: "AdvancedDotDigital-7", size: 30)
     }
 
@@ -79,6 +88,10 @@ class FirstViewController: UIViewController {
     
     
     //MARK: Utility Functions
+    
+    /**
+     Decrements timer by 1 second, and invalidates timer if it reaches 0.
+     */
     func decrementClock() {
         clockTime -= 1
         if(clockTime == 0) {
@@ -88,6 +101,13 @@ class FirstViewController: UIViewController {
         }
     }
 
+    /**
+     Formats aa number in the format HH:MM:SS.
+     
+     - Parameter interval: The number to format
+     
+     - Returns: A String the above format.
+     */
     func formatNumberAsTime(interval: Double) -> String {
         let interval = Int(interval)
         let seconds = interval % 60
@@ -101,6 +121,11 @@ class FirstViewController: UIViewController {
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
+    /**
+     Toggles the ability of the picker to be edited.
+     
+     - Parameter enabled: If true, picker is enabled.
+    */
     func toggleDatePicker(enabled: Bool) {
         datePickerOutlet.userInteractionEnabled = enabled
         
