@@ -17,18 +17,18 @@ class DateViewController: UIViewController {
     
     
     //MARK: Actions
-    @IBAction func startDateAction(sender: UIDatePicker) {
+    @IBAction func startDateAction(_ sender: UIDatePicker) {
         endDateOutlet.minimumDate = sender.date
     }
     
-    @IBAction func endDateAction(sender: UIDatePicker) {
+    @IBAction func endDateAction(_ sender: UIDatePicker) {
         startDateOutlet.maximumDate = sender.date
     }
     
-    @IBAction func calculateButton(sender: UIButton) {
+    @IBAction func calculateButton(_ sender: UIButton) {
         
         //calculate time between the two dates
-        let interval = endDateOutlet.date.timeIntervalSinceDate(startDateOutlet.date)
+        let interval = endDateOutlet.date.timeIntervalSince(startDateOutlet.date)
         
         //convert to days
         let timeInDays = Double(interval)/86400
@@ -48,8 +48,8 @@ class DateViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .All
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .all
     }
     
 

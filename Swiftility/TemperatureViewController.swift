@@ -27,7 +27,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     //MARK: Actions
-    @IBAction func switchAction(sender: UISegmentedControl) {
+    @IBAction func switchAction(_ sender: UISegmentedControl) {
         
         //reload UI when segment changes
         if(sender.selectedSegmentIndex == 0) {
@@ -61,17 +61,17 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.didReceiveMemoryWarning()
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .All
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .all
     }
     
     
     //MARK: Data Sources
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(switchOutlet.selectedSegmentIndex == 0) {
             return fDegrees.count
         } else {
@@ -81,7 +81,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     
     //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if(switchOutlet.selectedSegmentIndex == 0) {
             return fString[row]
         } else {
@@ -89,7 +89,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
         }
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(switchOutlet.selectedSegmentIndex == 0) {
             holdF = row
             convertToC(fDegrees[row])
@@ -110,7 +110,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
      
      - Returns: The array of formatted strings.
      */
-    func setPickerItems(values: Array<Int>, type: String) -> Array<String> {
+    func setPickerItems(_ values: Array<Int>, type: String) -> Array<String> {
         var stringOfValues: Array<String> = []
         for i in values {
             stringOfValues += ["\(i) \u{00B0}\(type)"]
@@ -125,7 +125,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
      
      - Parameter degree: The number to be converted.
     */
-    func convertToC(degree: Int) {
+    func convertToC(_ degree: Int) {
         let c = Double((degree - 32)) * (5/9)
         convertedTempLabel.text = String(format: "%0.2f \u{00B0}C", c)
     }
@@ -135,7 +135,7 @@ class TemperatureViewController: UIViewController, UIPickerViewDataSource, UIPic
      
      - Parameter degree: The number to be converted.
      */
-    func convertToF(degree: Int) {
+    func convertToF(_ degree: Int) {
         let f = (Double(degree) * 9/5) + 32.0
         convertedTempLabel.text = String(format: "%0.2f \u{00B0}F", f)
     }

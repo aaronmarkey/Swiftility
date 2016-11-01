@@ -10,7 +10,7 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
-    var timer = NSTimer()
+    var timer = Timer()
     var clockTime = 0.0 {
         didSet {
             timeLabel.text = formatNumberAsTime(clockTime)
@@ -26,23 +26,23 @@ class FirstViewController: UIViewController {
     
     
     //MARK: Actions
-    @IBAction func datePickerAction(sender: UIDatePicker) {
+    @IBAction func datePickerAction(_ sender: UIDatePicker) {
         clockTime = sender.countDownDuration
     }
     
-    @IBAction func playPauseAction(sender: UIBarButtonItem) {
+    @IBAction func playPauseAction(_ sender: UIBarButtonItem) {
         
         //if button is play when pressed, start timer
-        if(playPauseButtonOutlet.image == UIImage(imageLiteral: "play")) {
-            playPauseButtonOutlet.image = UIImage(imageLiteral: "pause")
+        if(playPauseButtonOutlet.image == UIImage(named: "play")) {
+            playPauseButtonOutlet.image = UIImage(named: "pause")
             
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector:
                 #selector(decrementClock), userInfo: nil, repeats: true)
             toggleDatePicker(false)
             
         //else end timer
         } else {
-            playPauseButtonOutlet.image = UIImage(imageLiteral: "play")
+            playPauseButtonOutlet.image = UIImage(named: "play")
             timer.invalidate()
             pauseTime = clockTime
             toggleDatePicker(true)
@@ -51,10 +51,10 @@ class FirstViewController: UIViewController {
     }
     
     //reset the timer to the value of the picker
-    @IBAction func resetAction(sender: UIBarButtonItem) {
+    @IBAction func resetAction(_ sender: UIBarButtonItem) {
         timer.invalidate()
         clockTime = datePickerOutlet.countDownDuration
-        playPauseButtonOutlet.image = UIImage(imageLiteral: "play")
+        playPauseButtonOutlet.image = UIImage(named: "play")
         toggleDatePicker(true)
     }
     
@@ -64,11 +64,11 @@ class FirstViewController: UIViewController {
         
         //set an initial value to the date picker. Work around for a bug in the 
         //date picker class.
-        let dateComp : NSDateComponents = NSDateComponents()
+        var dateComp : DateComponents = DateComponents()
         dateComp.hour = 0
         dateComp.minute = 1
-        let calendar : NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        let date : NSDate = calendar.dateFromComponents(dateComp)!
+        let calendar : Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        let date : Date = calendar.date(from: dateComp)!
         datePickerOutlet.setDate(date, animated: true)
         
         clockTime = datePickerOutlet.countDownDuration
@@ -81,8 +81,8 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .All
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .all
     }
     
     
@@ -96,7 +96,7 @@ class FirstViewController: UIViewController {
         clockTime -= 1
         if(clockTime == 0) {
             timer.invalidate()
-            playPauseButtonOutlet.image = UIImage(imageLiteral: "play")
+            playPauseButtonOutlet.image = UIImage(named: "play")
             toggleDatePicker(true)
         }
     }
@@ -108,7 +108,7 @@ class FirstViewController: UIViewController {
      
      - Returns: A String the above format.
      */
-    func formatNumberAsTime(interval: Double) -> String {
+    func formatNumberAsTime(_ interval: Double) -> String {
         let interval = Int(interval)
         let seconds = interval % 60
         let minutes = (interval / 60) % 60
@@ -126,8 +126,8 @@ class FirstViewController: UIViewController {
      
      - Parameter enabled: If true, picker is enabled.
     */
-    func toggleDatePicker(enabled: Bool) {
-        datePickerOutlet.userInteractionEnabled = enabled
+    func toggleDatePicker(_ enabled: Bool) {
+        datePickerOutlet.isUserInteractionEnabled = enabled
         
         if(enabled) {
             datePickerOutlet.alpha = 1.0
